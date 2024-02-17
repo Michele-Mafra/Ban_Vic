@@ -1,8 +1,8 @@
 with
     fonte_agencias as (
         select 
-            --cod_agencia
-            nome
+            cod_agencia
+            , nome
             , endereco
             , cidade
             , uf

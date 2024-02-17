@@ -8,6 +8,7 @@ sources:
       - name: agencias
       - name: clientes
       - name: colaborador_agencia
+      - name: colaboradores 
       - name: contas
-      - name: porpostas_credito
+      - name: propostas_credito
       - name: transacoes
