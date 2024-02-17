@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: banv
+    description: Fonte SAP de Agencias da banvic
+    schema: dbt_mmichele 
+    tables:
+      - name: agencias
+      - name: clientes
+      - name: colaborador_agencia
+      - name: contas
+      - name: porpostas_credito
+      - name: transacoes
