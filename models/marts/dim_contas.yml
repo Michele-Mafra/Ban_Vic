@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_contas
+    description: Essa é a dimensão com informações da agencia
+    columns:
+      - name: num_conta
+        description: Essa é a chave primaria da dimensão contas.
+        tests:
+          - unique
+          - not_null

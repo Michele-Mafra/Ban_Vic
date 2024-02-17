@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_transacoes
+    description: Essa é a dimensão com informações da transacoes
+    columns:
+      - name: cod_transacao
+        description: Essa é a chave primaria da dimensão transacoes.
+        tests:
+          - unique
+          - not_null
