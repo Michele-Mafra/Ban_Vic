@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_colaborador_agencia
+    description: Essa é a dimensão com informações do colaborador_agencia
+  - name: cod.colaborador_agencia
+    description: Essa é a chave primaria da dimensão cloborador_agencia.
+    tests:
+        - unique
+        - not_null

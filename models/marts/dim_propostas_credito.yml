@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_propostas_credito
+    description: Essa é a dimensão com informações da proposta credito
+    columns:
+      - name: cod_proposta
+        description: Essa é a chave primaria da dimensão proposta credito.
+        tests:
+          - unique
+          - not_null
