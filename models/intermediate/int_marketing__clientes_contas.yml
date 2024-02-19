@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_marketing__clientes_contas
+    description: Essa é a dimensão com informações da cnota e agencia
+    columns:
+      - name: cod_cliente
+        description: Essa é a chave primaria da dimensão contas.
+        tests:
+          - unique
+          - not_null

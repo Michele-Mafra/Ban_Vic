@@ -4,8 +4,9 @@ models:
   - name: dim_agencia
     description: Essa é a dimensão com informações da agencia
     columns:
-      - name: cod.contas
-        description: Essa é a chave primaria da dimensão contas.
+      - name: cod_agencia
+        description: Essa é a chave primaria da dimensão agencia.
         tests:
           - unique
           - not_null
+
