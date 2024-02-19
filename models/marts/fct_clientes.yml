@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: fct_clientes
+    description: Tabela com fatos de clientes cada linha descreve informações do cliente.
+    columns:
+      - name: cod_cliente 
+        description: Essa é a chave primaria da fct cliente.
+        tests:
+          - not_null
+          - unique
+      - name: frete_ponderado
+        description: Métrica criada dividindo o frete pelo número de produtos diferentes naquela nota fiscal.
+      - name: total_bruto
+        description: Valor da quantidade vezes o preço unitário sem descontos.

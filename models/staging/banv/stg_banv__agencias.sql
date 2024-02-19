@@ -2,7 +2,7 @@ with
     fonte_agencias as (
         select 
             cod_agencia
-            , nome
+            , nome 
             , endereco
             , cidade
             , uf

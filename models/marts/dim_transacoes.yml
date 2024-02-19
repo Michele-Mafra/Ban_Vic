@@ -4,7 +4,7 @@ models:
   - name: dim_transacoes
     description: Essa é a dimensão com informações da transacoes
     columns:
-      - name: cod_transacao
+      - name: num_conta
         description: Essa é a chave primaria da dimensão transacoes.
         tests:
           - unique
