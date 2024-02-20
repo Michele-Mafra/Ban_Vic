@@ -13,13 +13,13 @@ with
         select
             stg_contas.cod_cliente
             , stg_contas.cod_agencia
-            , stg_contas.cod_colaborador
+            --, stg_contas.cod_colaborador
             , stg_contas.tipo_conta
+            , stg_clientes.nome_cliente
             , stg_contas.data_abertura
             , stg_contas.saldo_total
             , stg_contas.saldo_disponivel
-            , stg_contas.data_ultimo_lancamento            
-            , stg_clientes.nome_cliente           
+            , stg_contas.data_ultimo_lancamento                   
             , stg_clientes.tipo_cliente
             , stg_clientes.data_inclusao
             , stg_clientes.cpfcnpj

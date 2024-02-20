@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: fct_clientes
+  - name: fct_clientes_dados
     description: Tabela com fatos de clientes cada linha descreve informações do cliente.
     columns:
       - name: cod_cliente 
@@ -8,7 +8,5 @@ models:
         tests:
           - not_null
           - unique
-      - name: frete_ponderado
-        description: Métrica criada dividindo o frete pelo número de produtos diferentes naquela nota fiscal.
-      - name: total_bruto
-        description: Valor da quantidade vezes o preço unitário sem descontos.
+      - name: idade_cliente
+        description: Métrica criada dividindo para vididar a quantidade de cliente com o valor da idade para media.
