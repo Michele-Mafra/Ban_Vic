@@ -16,7 +16,7 @@ with
 --ver idade dos clientes   
     , idade_cliente as (
         SELECT 
-            sum(DATE_DIFF('2024-02-19',data_nascimento, YEAR)) AS idade_cliente
+            sum(DATE_DIFF('2024-02-19',data_nascimento, YEAR)) AS idade_media_cliente
         from {{ source('banv', 'clientes') }}
     )
 --ver media de idade dos clientes   
@@ -26,16 +26,17 @@ with
         --from {{ source('banv', 'clientes') }}
        -- WHERE age IN (FLOOR(count / 2), CEIL(count / 2))
     --)
-    --ver conta com maior movimentação  
+     
 
 
 
     
 
 
-select data_abertura
-from stg_banv__clientes
-
+select*
+from 
+    qtd_clientes
+    , idade_cliente
 
 
  
