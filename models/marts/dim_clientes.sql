@@ -13,12 +13,13 @@ with
     , joined_tabelas as (
         select
             stg_clientes.nome_cliente
-            , stg_clientes.tipo_cliente
+            , stg_clientes.data_nascimento
             , stg_clientes.endereco
             , stg_clientes.email
             , stg_contas.tipo_conta
             , stg_contas.saldo_total
             , stg_contas.saldo_disponivel
+            , stg_clientes.data_inclusao
             
         from stg_clientes
         left join stg_contas on 

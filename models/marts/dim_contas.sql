@@ -5,4 +5,4 @@ with
     )
 
 select * 
-from stg_contas
+from stg_contas 
