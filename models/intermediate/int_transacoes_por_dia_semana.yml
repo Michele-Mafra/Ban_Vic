@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_transacoes_por_dia_semana
+    description: Essa é a dimensão com informações da transacoes_contas
+    columns:
+      - name: cod_transacao
+        description: Essa é a chave primaria da dimensão contas.
+        tests:
+          - unique
+          - not_null
