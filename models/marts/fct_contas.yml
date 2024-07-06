@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: tipo_agencia
+    description: |
+      Modelo para contar contas por tipo de agência (digital e física).
+    columns:
+      - name: cod_agencia
+        description: Código da agência
+      - name: nome_agencia
+        description: Nome da agência
+      - name: tipo_agencia
+        description: Tipo da agência (Digital ou Física)
+      - name: tipo_conta
+        description: Tipo da conta
+      - name: quantidade_contas
+        description: Quantidade de contas
+      - name: tipo_agencia_categoria
+        description: Categoria do tipo de agência (Digital, Física ou Outro)
+    meta:
+      dbt_utils:
+        materialized: view
+    tags:
+      - fato
+      - contas
+      - agencia
+
+sources:
+  - name: stg_banv__contas
+    description: Tabela de contas do BanVic
+  - name: stg_banv__agencias
+    description: Tabela de agências do BanVic
+
