@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_idade_media_clientes_por_regiao
+    description: Calcula a idade média dos clientes por região a partir dos dados de clientes, contas e agências.
+    columns:
+      - name: regiao
+        description: Região onde os clientes estão localizados.
+      - name: idade_media_clientes
+        description: Idade média dos clientes na região.
+
+    materialized: view
+    sql: models/int_idade_media_clientes_por_regiao.sql
+
+sources:
+  - name: stg_banv__clientes
+    description: Tabela de clientes do sistema BanVic.
+
+  - name: stg_banv__contas
+    description: Tabela de contas do sistema BanVic.
+
+  - name: stg_banv__agencias
+    description: Tabela de agências do sistema BanVic.

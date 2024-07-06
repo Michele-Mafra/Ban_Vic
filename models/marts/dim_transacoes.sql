@@ -12,7 +12,7 @@ with
     , joined_tabelas as (
         select
         stg_transacoes.nome_transacao
-        , stg_transacoes.data_transacao
+        , stg_transacoes.data_transacao 
         , stg_transacoes.data_transacao
         , stg_transacoes.valor_transacao
         , stg_contas.tipo_conta

@@ -1,10 +1,10 @@
 version: 2
 
 models:
-  - name: int_marketing__clientes_contas
-    description: Essa é a dimensão com informações da cnota e agencia
+  - name: int_valor_movimentado_por_periodo_mes
+    description: Essa é a dimensão com informações da transacoes_contas
     columns:
-      - name: cod_cliente
+      - name: data_transacao
         description: Essa é a chave primaria da dimensão contas.
         tests:
           - unique

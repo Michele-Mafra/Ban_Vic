@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: joined_tabelas
+    description: "Tabela unificada com informações de clientes, contas e agências"
+    columns:
+      - name: nome_cliente
+        description: "Nome do cliente"
+      - name: tipo_cliente
+        description: "Tipo de cliente (Pessoa Física ou Jurídica)"
+      - name: endereco
+        description: "Endereço do cliente"
+      - name: email
+        description: "Email do cliente"
+      - name: tipo_conta
+        description: "Tipo de conta do cliente"
+      - name: saldo_total
+        description: "Saldo total na conta do cliente"
+      - name: saldo_disponivel
+        description: "Saldo disponível na conta do cliente"
+      - name: cod_agencia
+        description: "Código da agência"
+      - name: nome
+        description: "Nome da agência"
+      - name: cidade
+        description: "Cidade da agência"
+      - name: uf
+        description: "Unidade Federativa da agência"
+      - name: data_abertura
+        description: "Data de abertura da agência"
+      - name: tipo_agencia
+        description: "Tipo da agência"
+
+  - name: transacoes_por_dia_semana
+    description: "Volume de transações e valor médio movimentado por dia da semana"
+    columns:
+      - name: dia_semana
+        description: "Dia da semana (0 é domingo, 1 é segunda-feira, etc.)"
+      - name: volume_transacoes
+        description: "Número de transações realizadas no dia da semana"
+      - name: valor_medio_transacoes
+        description: "Valor médio das transações realizadas no dia da semana"
+
+  - name: valor_movimentado_por_periodo_mes
+    description: "Valor médio movimentado no início e no final do mês"
+    columns:
+      - name: periodo_mes
+        description: "Período do mês (Início do Mês ou Final do Mês)"
+      - name: valor_medio_transacoes
+        description: "Valor médio das transações no período do mês"
+
+sources:
+  - name: stg_banv__agencias
+    description: "Tabela de agências"
+  - name: stg_banv__clientes
+    description: "Tabela de clientes"
+  - name: stg_banv__contas
+    description: "Tabela de contas"
+  - name: stg_banv__transacoes
+    description: "Tabela de transações"
