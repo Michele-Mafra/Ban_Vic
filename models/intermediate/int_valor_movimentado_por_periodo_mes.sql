@@ -1,16 +1,23 @@
 with stg_transacoes as (
     select *
     from {{ ref('stg_banv__transacoes') }}
+),
+
+metricas_diarias as (
+    select
+        data_transacao,
+        valor_transacao,
+        extract(day from cast(data_transacao as timestamp)) as dia
+    from stg_transacoes
 )
 
 select
     case
-        when extract(day from timestamp(data_transacao)) <= 15 then 'Inicio do Mes'
-        else 'Final do Mes'
-    end as periodo_mes,
-    avg(valor_transacao) as valor_medio_transacoes
-from stg_transacoes
-group by periodo_mes
-order by periodo_mes
-
+        when dia <= 15 then 'Início de mês'
+        else 'Final de mês'
+    end as periodo,
+    avg(valor_transacao) as media_valor_movimentado
+from metricas_diarias
+group by periodo
+order by media_valor_movimentado desc
 

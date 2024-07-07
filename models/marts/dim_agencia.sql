@@ -26,7 +26,7 @@ with
             , stg_contas.saldo_disponivel
             , stg_agencia.cod_agencia
             , stg_agencia.nome
-            --, stg_agencia.endereco
+            , stg_agencia.endereco
             , stg_agencia.cidade
             , stg_agencia.uf
             , stg_agencia.data_abertura
