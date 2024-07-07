@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: >
+      Dimensão de datas gerada a partir de 2010-01-01 até 2022-12-30.
+    columns:
+      - name: sk_date
+        description: Data no formato YYYY-MM-DD
+        tests:
+          - not_null
+      - name: year
+        description: Ano
+        tests:
+          - not_null
+      - name: month
+        description: Mês
+        tests:
+          - not_null
+      - name: month_abbreviation
+        description: Abreviação do mês (Jan, Feb, etc.)
+        tests:
+          - not_null
+      - name: day_of_week
+        description: Dia da semana (Monday, Tuesday, etc.)
+        tests:
+          - not_null
+      - name: weekday
+        description: Dia da semana abreviado (Sun, Mon, etc.)
+        tests:
+          - not_null
+      - name: quarter
+        description: Trimestre do ano
+        tests:
+          - not_null
+
+seeds: []
