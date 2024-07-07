@@ -22,11 +22,11 @@ models:
         tests:
           - not_null
       - name: day_of_week
-        description: Dia da semana (Monday, Tuesday, etc.)
+        description: Dia da semana (Segunda, Terça, etc.)
         tests:
           - not_null
       - name: weekday
-        description: Dia da semana abreviado (Sun, Mon, etc.)
+        description: Dia da semana abreviado (Sun, Ter, etc.)
         tests:
           - not_null
       - name: quarter
