@@ -1,11 +1,59 @@
 version: 2
 
 models:
-  - name: int_valor_movimentado_por_periodo_mes
-    description: Essa é a dimensão com informações da transacoes_contas
+  - name: metricas_diarias
+    description: "Métricas diárias das transações"
     columns:
       - name: data_transacao
-        description: Essa é a chave primaria da dimensão contas.
+        description: "Data da transação"
         tests:
-          - unique
           - not_null
+
+      - name: valor_transacao
+        description: "Valor da transação"
+        tests:
+          - not_null
+
+      - name: dia
+        description: "Dia da transação extraído da data"
+        tests:
+          - not_null
+          - accepted_values:
+              values: range(1, 31)
+
+  - name: periodo
+    description: "Período do mês categorizado como 'Início de mês' ou 'Final de mês'"
+    columns:
+      - name: periodo
+        description: "Período categorizado"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Início de mês', 'Final de mês']
+
+      - name: media_valor_movimentado
+        description: "Média do valor movimentado por período"
+        tests:
+          - not_null
+
+sources:
+  - name: stg_banv__transacoes
+    description: "Tabela staging de transações do BanVic"
+    tables:
+      - name: stg_banv__transacoes
+        columns:
+          - name: data_transacao
+            description: "Data da transação"
+            tests:
+              - not_null
+
+          - name: valor_transacao
+            description: "Valor da transação"
+            tests:
+              - not_null
+
+          - name: cod_transacao
+            description: "Código único da transação"
+            tests:
+              - not_null
+              - unique

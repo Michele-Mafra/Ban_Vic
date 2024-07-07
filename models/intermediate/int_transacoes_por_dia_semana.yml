@@ -1,11 +1,41 @@
 version: 2
 
 models:
-  - name: int_transacoes_por_dia_semana
-    description: Essa é a dimensão com informações da transacoes_contas
+  - name: metricas_diarias
+    description: "Métricas diárias de transações"
     columns:
-      - name: cod_transacao
-        description: Essa é a chave primaria da dimensão contas.
+      - name: dia_semana
+        description: "Dia da semana representado numericamente (1 a 7)"
         tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7]
+
+      - name: volume_transacoes
+        description: "Volume de transações por dia da semana"
+        tests:
+          - not_null
+
+      - name: valor_medio_transacoes
+        description: "Valor médio das transações por dia da semana"
+        tests:
+          - not_null
+
+  - name: stg_banv__transacoes
+    description: "Tabela staging de transações"
+    columns:
+      - name: data_transacao
+        description: "Data da transação"
+        tests:
+          - not_null
+
+      - name: cod_transacao
+        description: "Código único da transação"
+        tests:
+          - not_null
           - unique
+
+      - name: valor_transacao
+        description: "Valor da transação"
+        tests:
           - not_null
