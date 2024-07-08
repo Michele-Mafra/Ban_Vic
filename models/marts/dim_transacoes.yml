@@ -9,3 +9,15 @@ models:
         tests:
           - unique
           - not_null
+      - name: nome_cliente
+        description: "Nome do cliente."
+      - name: cod_cliente
+        description: "Código do cliente."
+      - name: numero_transacoes
+        description: "Número de transações realizadas pelo cliente."
+      - name: total_gasto
+        description: "Total gasto pelo cliente."
+      - name: saldo_total
+        description: "Saldo total da conta do cliente."
+      - name: saldo_disponivel
+        description: "Saldo disponível da conta do cliente."

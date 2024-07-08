@@ -1,11 +1,24 @@
 version: 2
 
 models:
-  - name: dim_propostas_credito
-    description: Essa é a dimensão com informações da proposta credito
+  - name: joined_tabelas
+    description:
+      Modelo que junta informações de propostas de crédito com detalhes dos clientes.
     columns:
-      - name: cod_proposta
-        description: Essa é a chave primaria da dimensão proposta credito.
-        tests:
-          - unique
-          - not_null
+      - name: cod_cliente
+        description: "Código do cliente na proposta de crédito."
+      - name: nome_cliente
+        description: "Nome do cliente."
+      - name: valor_proposta
+        description: "Valor da proposta de crédito."
+      - name: valor_financiamento
+        description: "Valor do financiamento da proposta."
+      - name: valor_entrada
+        description: "Valor da entrada da proposta."
+      - name: quantidade_parcelas
+        description: "Quantidade de parcelas da proposta."
+      - name: carencia
+        description: "Período de carência da proposta."
+      - name: status_proposta
+        description: "Status da proposta de crédito."
+
