@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fct_gastos_clientes
+    description: "Relaciona os gastos dos clientes com suas movimentações por tipo."
+    columns:
+      - name: cod_cliente
+        description: "ID do cliente."
+        tests:
+          - not_null
+          - unique
+      - name: nome_cliente
+        description: "Nome do cliente."
+      - name: nome_transacao
+        description: "Tipo de movimentação (ex: credito, pix, ted, doc, recebimento)."
+      - name: total_gasto
+        description: "Total gasto pelo cliente para o tipo de movimentação."
+      - name: numero_transacoes
+        description: "Número de transações do cliente para o tipo de movimentação."
