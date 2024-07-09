@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fct_gastos_clientes_por_tempo
+    description: "Modelo que relaciona os gastos dos clientes com várias dimensões temporais."
+    columns:
+      - name: nome_cliente
+        description: "Nome do cliente."
+      - name: cod_cliente
+        description: "Código do cliente."
+      - name: data_transacao
+        description: "Data da transação."
+      - name: valor_transacao
+        description: "Valor da transação."
+      - name: saldo_total
+        description: "Saldo total na conta."
+      - name: saldo_disponivel
+        description: "Saldo disponível na conta."
+      - name: year
+        description: "Ano da transação."
+      - name: month
+        description: "Mês da transação."
+      - name: month_abbreviation
+        description: "Abreviação do mês da transação."
+      - name: day_of_week_name
+        description: "Nome do dia da semana da transação."
+      - name: quarter
+        description: "Trimestre da transação."
