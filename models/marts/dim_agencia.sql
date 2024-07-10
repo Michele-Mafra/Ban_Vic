@@ -21,16 +21,17 @@ with
             , stg_clientes.tipo_cliente
             , stg_clientes.endereco
             , stg_clientes.email
+            , stg_clientes.data_inclusao
             , stg_contas.tipo_conta
             , stg_contas.saldo_total
             , stg_contas.saldo_disponivel
             , stg_agencia.cod_agencia
             , stg_agencia.nome
-            , stg_agencia.endereco
             , stg_agencia.cidade
             , stg_agencia.uf
             , stg_agencia.data_abertura
             , stg_agencia.tipo_agencia
+          
             
         from stg_clientes
         left join stg_contas on 

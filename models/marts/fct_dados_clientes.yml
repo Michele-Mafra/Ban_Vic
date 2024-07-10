@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dados_clientes
+    description: Tabale com os dados do cliente ano e quantidade de clientes
+  - name: data_inclusão
+    description: data da inclusão do registro da conta dos clientes
+    tests:
+        - unique
+        - not_null
